@@ -1,0 +1,22 @@
+seed: 42
+
+data:
+  feature_cols: [age, AFC, FSH, LH]
+  outcome_col: live_birth
+
+model:
+  type: logistic
+  max_iter: 1000
+
+aggregator:
+  weight_by: n_auc  # n_auc | uniform | n_only
+
+evaluation:
+  bootstrap_n: 1000
+  mia_shadow_models: 5
+  ece_bins: 10
+  dca_threshold_range: [0.01, 0.99]
+
+experiment:
+  protocol: loco  # leave-one-centre-out
+  output_dir: outputs/${now:%Y-%m-%d_%H-%M-%S}

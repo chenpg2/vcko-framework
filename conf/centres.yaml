@@ -1,0 +1,16 @@
+centres:
+  - id: centre_1
+    name: "Centre 1"
+    data_path: data/processed/centre_1.parquet
+  - id: centre_2
+    name: "Centre 2"
+    data_path: data/processed/centre_2.parquet
+  - id: centre_3
+    name: "Centre 3"
+    data_path: data/processed/centre_3.parquet
+  - id: centre_4
+    name: "Centre 4"
+    data_path: data/processed/centre_4.parquet
+  - id: centre_5
+    name: "Centre 5"
+    data_path: data/processed/centre_5.parquet

@@ -73,17 +73,44 @@ The receiver recomputes `H' = SHA-256(serialize(VCKO))` and accepts only if `H' 
 
 ## Installation
 
+For editor/reviewer inspection, install directly from this repository:
+
 ```bash
-pip install vcko
+git clone https://github.com/chenpg2/vcko-framework.git
+cd vcko-framework
+uv sync --extra dev
 ```
 
-Or from source:
+If you are not using `uv`, a standard editable install also works:
 
 ```bash
-git clone <repository-url>
-cd vcko-framework
 pip install -e ".[dev]"
 ```
+
+The package name is reserved for release after publication; source installation is the
+supported path during peer review.
+
+## Reviewer Quickstart
+
+The public repository contains no patient-level data. Editors and reviewers can still
+verify the install, core package behavior, static checks, and synthetic quickstart:
+
+```bash
+uv run pytest -q
+uv run ruff check .
+uv run mypy src
+uv run python examples/01_quickstart.py
+```
+
+Optional paper-reproduction entry points are provided in `scripts/`. They require the
+approved private centre-level dataset, kept outside git:
+
+```bash
+uv run python scripts/run_loco.py --data-dir data/processed --bootstrap 1000
+uv run python scripts/run_mia.py --data-dir data/processed --shadow-models 5
+```
+
+See `data/README.md` and `docs/getting_started.md` for the expected local data layout.
 
 ## Usage
 
