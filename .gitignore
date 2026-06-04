@@ -72,3 +72,11 @@ Thumbs.db
 .env
 *.pem
 *.key
+
+# kw-engine knowledge base
+kb/paper/*.pdf
+.kw/index.db
+kb/memory/.index.db
+kb/.kw/
+kb/memory/.index.lock
+kb/memory/.index.db
