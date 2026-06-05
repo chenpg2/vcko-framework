@@ -80,3 +80,7 @@ kb/memory/.index.db
 kb/.kw/
 kb/memory/.index.lock
 kb/memory/.index.db
+
+# Real patient data — NEVER commit (PIPL/GDPR)
+rawinputdata/
+results/**/*.pkl
