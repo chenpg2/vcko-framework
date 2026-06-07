@@ -84,3 +84,4 @@ kb/memory/.index.db
 # Real patient data — NEVER commit (PIPL/GDPR)
 rawinputdata/
 results/**/*.pkl
+.gstack/

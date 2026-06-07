@@ -138,17 +138,28 @@ def run(
             }
         )
 
-        # (2) Robustness — replace one source coef with an in-bound adversary.
+        # (2) Robustness — ADD one adversary (not replace), so K_poisoned = K+1.
+        # With K=2 honest + 1 poisoned (K=3), the geometric median (breakdown 1/2)
+        # can outvote the single adversary. Replacing one of K=2 yields K=2 where
+        # median = mean, which is degenerate and uninformative.
         honest_mean = betas.mean(axis=0)
-        adversary = -honest_mean * 3.0  # wrong direction, moderate magnitude
-        poisoned = betas.copy()
-        poisoned[rng.integers(len(poisoned))] = adversary
+        # Strong attack: 50x the honest norm, pointing opposite direction.
+        # With K_honest / (K_honest + 1) > 1/2, the geometric median (breakdown 1/2)
+        # should survive, but the linear mean will be pulled far from the truth.
+        adversary = -honest_mean * 50.0
+        poisoned = np.vstack([betas, adversary[None, :]])  # K+1 = 3
         beta_lin = poisoned.mean(axis=0)  # linear combine (zero breakdown)
         beta_rob = geometric_median(poisoned)  # robust combine
         a_lin, _ = _auc_brier(yte, _predict_raw(Xte, beta_lin, intercept_pooled))
         a_rob, _ = _auc_brier(yte, _predict_raw(Xte, beta_rob, intercept_pooled))
         robust_rows.append(
-            {"held": held, "auc_linear_poisoned": a_lin, "auc_geomedian_poisoned": a_rob}
+            {
+                "held": held,
+                "k_honest": len(betas),
+                "k_poisoned": len(poisoned),
+                "auc_linear_poisoned": a_lin,
+                "auc_geomedian_poisoned": a_rob,
+            }
         )
 
         # (3) DP utility curve — Gaussian coef noise at decreasing budgets.

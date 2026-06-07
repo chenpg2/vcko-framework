@@ -11,14 +11,14 @@
     "auc_geomedian": 0.6311
   },
   "robustness_mean": {
-    "auc_linear_poisoned": 0.3684,
-    "auc_geomedian_poisoned": 0.3684
+    "auc_linear_poisoned": 0.3689,
+    "auc_geomedian_poisoned": 0.6327
   },
   "dp_curve_mean": {
     "inf": 0.6311,
-    "5": 0.6243,
-    "2": 0.5958,
-    "1": 0.5627
+    "5": 0.6268,
+    "2": 0.5809,
+    "1": 0.5111
   },
   "per_fold_parity": [
     {
@@ -49,18 +49,24 @@
   "per_fold_robust": [
     {
       "held": "Centre_1",
-      "auc_linear_poisoned": 0.33988697594953343,
-      "auc_geomedian_poisoned": 0.33988697594953343
+      "k_honest": 2,
+      "k_poisoned": 3,
+      "auc_linear_poisoned": 0.3388158759363911,
+      "auc_geomedian_poisoned": 0.6626486726245235
     },
     {
       "held": "Centre_3",
-      "auc_linear_poisoned": 0.3847038714647898,
-      "auc_geomedian_poisoned": 0.3847038714647898
+      "k_honest": 2,
+      "k_poisoned": 3,
+      "auc_linear_poisoned": 0.38603868283953713,
+      "auc_geomedian_poisoned": 0.6160778801753519
     },
     {
       "held": "Centre_4",
-      "auc_linear_poisoned": 0.3807266828633764,
-      "auc_geomedian_poisoned": 0.3807266828633764
+      "k_honest": 2,
+      "k_poisoned": 3,
+      "auc_linear_poisoned": 0.3819762874807253,
+      "auc_geomedian_poisoned": 0.6192605492208423
     }
   ]
 }
