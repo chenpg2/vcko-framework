@@ -1,0 +1,102 @@
+{
+  "seed": 42,
+  "feature_set": "core6_no_transferday",
+  "n_features": 6,
+  "n_folds": 5,
+  "min_sources_per_fold": 4,
+  "max_byzantine_fraction": 0.25,
+  "parity_mean": {
+    "auc_heuristic": 0.6511,
+    "auc_fixed_effect": 0.6504,
+    "auc_geomedian": 0.6514
+  },
+  "robustness_mean": {
+    "auc_linear_poisoned": 0.3485,
+    "auc_geomedian_poisoned": 0.6516
+  },
+  "dp_curve_mean": {
+    "inf": 0.6514,
+    "5": 0.6494,
+    "2": 0.6065,
+    "1": 0.5609
+  },
+  "per_fold_parity": [
+    {
+      "held": "Centre_1",
+      "n_sources": 4,
+      "auc_heuristic": 0.6779433622111423,
+      "auc_fixed_effect": 0.6776255822585041,
+      "auc_geomedian": 0.6773912874379686,
+      "brier_geomedian": 0.23274989879260796
+    },
+    {
+      "held": "Centre_2",
+      "n_sources": 4,
+      "auc_heuristic": 0.6725664190207296,
+      "auc_fixed_effect": 0.672056448374751,
+      "auc_geomedian": 0.6722040726151002,
+      "brier_geomedian": 0.22298829908252954
+    },
+    {
+      "held": "Centre_3",
+      "n_sources": 4,
+      "auc_heuristic": 0.621679066306067,
+      "auc_fixed_effect": 0.6196352009970363,
+      "auc_geomedian": 0.6229296634850134,
+      "brier_geomedian": 0.2311477367626847
+    },
+    {
+      "held": "Centre_4",
+      "n_sources": 4,
+      "auc_heuristic": 0.6099669824145916,
+      "auc_fixed_effect": 0.6102300923684245,
+      "auc_geomedian": 0.6106333324430022,
+      "brier_geomedian": 0.2626265088066875
+    },
+    {
+      "held": "Centre_5",
+      "n_sources": 4,
+      "auc_heuristic": 0.6734149122649521,
+      "auc_fixed_effect": 0.6726889128062513,
+      "auc_geomedian": 0.6736874183590029,
+      "brier_geomedian": 0.20874637091613424
+    }
+  ],
+  "per_fold_robust": [
+    {
+      "held": "Centre_1",
+      "k_honest": 4,
+      "k_poisoned": 5,
+      "auc_linear_poisoned": 0.32195323692644623,
+      "auc_geomedian_poisoned": 0.6774049669294939
+    },
+    {
+      "held": "Centre_2",
+      "k_honest": 4,
+      "k_poisoned": 5,
+      "auc_linear_poisoned": 0.3275908032167555,
+      "auc_geomedian_poisoned": 0.6719506942962185
+    },
+    {
+      "held": "Centre_3",
+      "k_honest": 4,
+      "k_poisoned": 5,
+      "auc_linear_poisoned": 0.37752567290057826,
+      "auc_geomedian_poisoned": 0.623140834478459
+    },
+    {
+      "held": "Centre_4",
+      "k_honest": 4,
+      "k_poisoned": 5,
+      "auc_linear_poisoned": 0.38943533148738024,
+      "auc_geomedian_poisoned": 0.6109957314332298
+    },
+    {
+      "held": "Centre_5",
+      "k_honest": 4,
+      "k_poisoned": 5,
+      "auc_linear_poisoned": 0.3258656827298688,
+      "auc_geomedian_poisoned": 0.6743263045325286
+    }
+  ]
+}
