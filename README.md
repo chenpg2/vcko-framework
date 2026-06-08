@@ -363,7 +363,7 @@ All statistics computed from transmitted knowledge objects alone, without patien
              without shared infrastructure},
   author  = {Chen, Peigen and Jin, Lei and Mao, Yundong and
              Zhang, Cuilian and Shi, Juanzi and Fang, Cong and Li, Tingting},
-  journal = {npj Digital Medicine (under review)},
+  journal = {npj Digital Medicine (submit)},
   year    = {2026}
 }
 ```
